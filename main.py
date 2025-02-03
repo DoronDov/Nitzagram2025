@@ -1,4 +1,6 @@
 import pygame
+
+from classes.Post import Post
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
 
@@ -19,6 +21,8 @@ def main():
 
     # TODO: add a post here
 
+    b1 = Post("Doron", "Israel", "Cake")
+
     running = True
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
@@ -30,7 +34,7 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
-
+        print(b1.display())
         # Update display - without input update everything
         pygame.display.update()
 

@@ -8,10 +8,18 @@ class Post:
     """
     A class used to represent post on Nitzagram
     """
-    def __init__(self): #TODO: add parameters
-        #TODO: write me!
-        pass
 
+    def __init__(self, username, location, description):
+        self.username = username
+        self.location = location
+        self.description = description
+        self.likes_counter = 0
+        self.comments = []
+    def add_like(self):
+        self.likes_counter += 1
+
+    def add_comment(self, text):
+        self.comments.append(text)
     def display(self):
         """
         Display the Post image/Text, description, location, likes and comments
@@ -20,6 +28,27 @@ class Post:
         :return: None
         """
         # TODO: write me!
+        def display_header(self):
+            """
+            Display post location and description on screen
+
+            :return:None
+            """
+            # display the location
+            location_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE, bold=True)
+            location_to_display = location_font.render(self.user_name,
+                                                             True, GREY)
+            screen.blit(location_to_display, (USER_NAME_X_POS, USER_NAME_Y_POS))
+            # display description
+            description_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE, bold=True)
+            description_to_display = description_font.render(self.user_name,
+                                                         True, GREY)
+            screen.blit(description_to_display, (USER_NAME_X_POS, USER_NAME_Y_POS))
+            # display the user name
+            user_name_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE, bold=True)
+            user_name_to_display = user_name_font.render(self.user_name,
+                                                         True, GREY)
+            screen.blit(user_name_to_display, (USER_NAME_X_POS, USER_NAME_Y_POS))
         pass
 
 
